@@ -1,244 +1,45 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой магазин</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
-        .container { max-width: 100%; margin: 0; padding: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3 - 40px), 1fr)); grid-gap: 20px; }
-        .product-card { background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); overflow: hidden; position: relative; }
-        .product-card img { max-width: 100%; height: auto; }
-        .product-details { padding: 20px; text-align: center; }
-        .product-name, .product-price { margin-bottom: 10px; }
-        .product-name { font-size: 15px; color: #333; }
-        .product-price { font-size: 16px; color: #777; }
-        .quantity-control { display: flex; justify-content: center; align-items: center; }
-        .quantity-btn { background-color: #007BFF; color: #fff; border: none; border-radius: 5px; padding: 5px 10px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease; }
-        .quantity-btn:hover { background-color: #0056b3; }
-        .quantity-display { position: absolute; top: 10px; right: 10px; background-color: #007BFF; color: #fff; padding: 5px; border-radius: 50%; display: none; min-width: 20px; height: 20px; justify-content: center; align-items: center; }
-        .open-cart-btn { background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1; }
-		.close-cart-btn { background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1; display: none; }
-        .open-cart-btn:hover, .close-cart-btn:hover { background-color: #0056b3; }
-        .cart-overlay { position: fixed; bottom: 0; left: 0; width: 100%; height: 0; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: flex-end; z-index: 10000; overflow: hidden; transition: height 0.5s ease; }
-        .cart { background-color: #fff; border-radius: 0px; padding: 20px; width: 100%; max-width: 500px;  margin-bottom: 38.5px; }
-        .cart-items { list-style: none; padding: 0; }
-        .cart-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #ccc; }
-        .cart-item:last-child { border-bottom: none; }
-        .cart-item img { width: 50px; height: auto; margin-right: 10px; }
-        .cart-item-details { display: flex; align-items: center; }
-        .cart-item-name { font-size: 16px; color: #333; margin-right: 5px; }
-        .cart-item-price { font-size: 14px; color: #777; padding-left: 5px;}
-        .cart-total { font-size: 18px; font-weight: bold; margin-top: 10px; }
-		.remove-from-cart-btn { position: absolute;right: 0; background-color: #ff6347; /* Цвет кнопки */ color: #fff; /* Цвет текста кнопки */ border: none; padding: 5px 10px; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease; /* Закругление углов */ }
-        .confirm-order-btn { background-color: #28a745; /* Цвет кнопки */ color: #fff; /* Цвет текста кнопки */ border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease; /* Закругление углов */ display: none; /* По умолчанию скрыта */ }
-        .confirm-order-btn:hover { background-color: #218838; /* Цвет при наведении */ }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
 </head>
 <body>
-<div class="container">
-    <!-- Products will be dynamically generated here -->
-</div>
-<div class="cart-overlay" id="cart-overlay">
-    <div class="cart">
-        <h2 class="cart-title">Корзина</h2>
-        <ul class="cart-items" id="cart-items">
-            <!-- Items in the cart will be listed here -->
-        </ul>
-        <div class="cart-total" id="cart-total">Итого: 0 руб.</div>
-        <button class="close-cart-btn" id="close-cart-btn">Закрыть корзину</button>
-        <button class="confirm-order-btn" id="confirm-order-btn">Подтвердить заказ</button>
-    </div>
-</div>
-<button class="open-cart-btn" id="open-cart-btn">Открыть корзину</button>
-<script>
-    const productData = [
-        { id: "product1", name: "19 литров", price: 190, image: "product1.jpg" },
-        { id: "product2", name: "6 литров 2 шт.", price: 152, image: "product2.jpg" },
-        { id: "product3", name: "10 литров", price: 124, image: "product3.jpg" },
-        { id: "product4", name: "Помпа первая", price: 150, image: "product4.jpg" },
-        { id: "product5", name: "Помпа вторая", price: 200, image: "product5.jpg" },
-        { id: "product6", name: "Мини кулер", price: 300, image: "product6.jpg" }
-    ];
+	<div class="container">
+		<div class="inner">
+			<div class="item">
+				<img src="static/images/1.jpg" alt="Вода 19" class="img">
+				<button class="btn" id="btn1">Add</button>
+			</div>
+			<div class="item">
+				<img src="static/images/2.jpg" alt="Вода 19" class="img">
+				<button class="btn" id="btn2">Add</button>
+			</div>
+			<div class="item">
+				<img src="static/images/3.jpg" alt="Вода 19" class="img">
+				<button class="btn" id="btn3">Add</button>
+			</div>
+			<div class="item">
+				<img src="static/images/1.jpg" alt="Вода 19" class="img">
+				<button class="btn" id="btn4">Add</button>
+			</div>
+			<div class="item">
+				<img src="static/images/1.jpg" alt="Вода 19" class="img">
+				<button class="btn" id="btn5">Add</button>
+			</div>
+			<div class="item">
+				<img src="static/images/1.jpg" alt="Вода 19" class="img">
+				<button class="btn" id="btn6">Add</button>
+			</div>
+		</div>
+	</div>
+	<div class="usercard" id="usercard">
+		
+	</div>
 
-    const container = document.querySelector('.container');
-    const cartItemsContainer = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-    const openCartBtn = document.getElementById('open-cart-btn');
-    const closeCartBtn = document.getElementById('close-cart-btn');
-    const confirmOrderBtn = document.getElementById('confirm-order-btn');
-    const cartOverlay = document.getElementById('cart-overlay');
-
-    // Генерация карточек товаров
-    productData.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.setAttribute('data-id', product.id);
-        card.innerHTML = `
-            <img src="static/images/${product.image}" alt="${product.name}">
-            <div class="product-details">
-                <h3 class="product-name">${product.name}</h3>
-                <p class="product-price">${product.price} руб.</p>
-                <div class="quantity-control">
-                    <button class="quantity-btn decrease-btn" style="display:none;">-</button>
-                    <span class="quantity-display">0</span>
-                    <button class="quantity-btn increase-btn">+</button>
-                </div>
-            </div>
-        `;
-        container.appendChild(card);
-
-        const increaseBtn = card.querySelector('.increase-btn');
-        const decreaseBtn = card.querySelector('.decrease-btn');
-        const quantityDisplay = card.querySelector('.quantity-display');
-
-        // Обработчики для управления количеством товаров
-        increaseBtn.addEventListener('click', () => {
-            let quantity = parseInt(quantityDisplay.textContent);
-            quantity++;
-            quantityDisplay.textContent = quantity;
-            quantityDisplay.style.display = 'block';
-            decreaseBtn.style.display = 'block';
-            addToCart(product, quantity);
-        });
-
-        decreaseBtn.addEventListener('click', () => {
-            let quantity = parseInt(quantityDisplay.textContent);
-            if (quantity > 1) {
-                quantity--;
-            } else {
-                quantity = 0;
-                decreaseBtn.style.display = 'none';
-                quantityDisplay.style.display = 'none';
-            }
-            quantityDisplay.textContent = quantity;
-            updateCartItem(product, quantity);
-        });
-    });
-
-    // Обработчики кнопок открытия и закрытия корзины
-    openCartBtn.addEventListener('click', () => {
-        openCart();
-    });
-
-    closeCartBtn.addEventListener('click', () => {
-        closeCart();
-    });
-
-    // Обработчик кнопки подтверждения заказа
-    confirmOrderBtn.addEventListener('click', () => {
-        const cartItems = Array.from(document.querySelectorAll('.cart-item')).map(item => {
-            return {
-                id: item.dataset.id,
-                name: item.querySelector('.cart-item-name').textContent,
-                quantity: parseInt(item.querySelector('.item-quantity').textContent),
-                price: parseFloat(item.querySelector('.cart-item-price').textContent),
-            };
-        });
-        sendOrderToTelegram(cartItems);
-    });
-
-    // Функция отправки заказа на сервер
-    function sendOrderToTelegram(cartItems) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/send_order_to_telegram'); // Путь к обработчику на сервере
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                alert('Заказ успешно отправлен!');
-            } else {
-                alert('Произошла ошибка при отправке заказа.');
-            }
-        };
-        xhr.send(JSON.stringify(cartItems));
-    }
-
-    // Открытие корзины
-    function openCart() {
-        openCartBtn.style.display = 'none';
-        closeCartBtn.style.display = 'block';
-        confirmOrderBtn.style.display = 'block'; // Показать кнопку "Подтвердить заказ"
-        cartOverlay.style.height = '100%';
-    }
-
-    // Закрытие корзины
-    function closeCart() {
-        closeCartBtn.style.display = 'none';
-        openCartBtn.style.display = 'block';
-        confirmOrderBtn.style.display = 'none'; // Скрыть кнопку "Подтвердить заказ"
-        cartOverlay.style.height = '0';
-    }
-
-    // Добавление товара в корзину
-    function addToCart(product, quantity) {
-        let cartItem = cartItemsContainer.querySelector(`[data-id="${product.id}"]`);
-        if (!cartItem) {
-            cartItem = document.createElement('li');
-            cartItem.className = 'cart-item';
-            cartItem.setAttribute('data-id', product.id);
-            cartItem.innerHTML = `
-                <img src="static/images/${product.image}" alt="${product.name}">
-                <div class="cart-item-details">
-                    <span class="cart-item-name">${product.name}</span>
-                    <span class="item-quantity">${quantity}</span>
-                    <span class="cart-item-price">${(product.price * quantity)} руб.</span>
-                    <button class="remove-from-cart-btn">Удалить</button>
-                </div>
-            `;
-            cartItemsContainer.appendChild(cartItem);
-
-            const removeFromCartBtn = cartItem.querySelector('.remove-from-cart-btn');
-            removeFromCartBtn.addEventListener('click', () => removeFromCart(product, cartItem));
-        } else {
-            const itemQuantity = cartItem.querySelector('.item-quantity');
-            itemQuantity.textContent = quantity;
-            const itemPrice = cartItem.querySelector('.cart-item-price');
-            itemPrice.textContent = `${(product.price * quantity)} руб.`;
-        }
-        updateCartTotal();
-    }
-
-    // Обновление товара в корзине
-    function updateCartItem(product, quantity) {
-        const cartItem = cartItemsContainer.querySelector(`[data-id="${product.id}"]`);
-        if (cartItem && quantity > 0) {
-            const itemQuantity = cartItem.querySelector('.item-quantity');
-            itemQuantity.textContent = quantity;
-            const itemPrice = cartItem.querySelector('.cart-item-price');
-            itemPrice.textContent = `${(product.price * quantity)} руб.`;
-        } else if (cartItem) {
-            cartItem.remove();
-        }
-        updateCartTotal();
-    }
-
-    // Удаление товара из корзины
-    function removeFromCart(product, cartItem) {
-        if (!cartItem) {
-            cartItem = cartItemsContainer.querySelector(`[data-id="${product.id}"]`);
-        }
-        if (cartItem) {
-            cartItem.remove();
-        }
-        const card = container.querySelector(`.product-card[data-id="${product.id}"]`);
-        const quantityDisplay = card.querySelector('.quantity-display');
-        quantityDisplay.textContent = '0';
-        card.querySelector('.decrease-btn').style.display = 'none';
-        quantityDisplay.style.display = 'none';
-        updateCartTotal();
-    }
-
-    // Обновление общей суммы заказа
-    function updateCartTotal() {
-        const cartItems = cartItemsContainer.querySelectorAll('.cart-item');
-        let total = 0;
-        cartItems.forEach(item => {
-            const priceText = item.querySelector('.cart-item-price').textContent;
-            const price = parseInt(priceText.replace(' руб.', ''));
-            total += price;
-        });
-        cartTotal.textContent = `Итого: ${total} руб.`;
-    }
-</script>
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="app.js"></script>
 </body>
 </html>
