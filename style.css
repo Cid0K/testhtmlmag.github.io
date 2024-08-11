@@ -3,7 +3,7 @@ body {
 	padding: 0;
 	font-size: 18px;
 	color: var(--tg-theme-text-color);
-    /*background: rgb(161, 193, 240);*/
+    background: rgb(161, 193, 240);
 }
 
 .container {
