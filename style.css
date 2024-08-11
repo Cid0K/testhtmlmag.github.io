@@ -3,44 +3,124 @@ body {
 	padding: 0;
 	font-size: 18px;
 	color: var(--tg-theme-text-color);
-    background: rgb(161, 193, 240);
+    /*background: rgb(161, 193, 240);*/
 }
 
 .container {
 	max-width: 390px;
+	/*border: 1px solid #7c0000;*/
 }
 
 .inner {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 200px 200px 200px;
+	
 }
 
 .img {
 	width: 150px;
+	transition: transform 10s ease, margin-top 10s ease-in-out;
+	
 }
+
 
 .item {
 	text-align: center;
+	
 }
 
+
 .btn {
-	display: inline-block;
-	padding: 10px 20px;
+	position: absolute;
+	width: 100px;
+	height: 40px; /* Фиксированная высота */
+	
+	transform: translate(-127px, 155px);
+	border: none;
+	border-radius: 10px;
+	background: rgb(0, 123, 255);
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	z-index: 100;
+	transition: width 0.2s ease-in-out, margin-left 0.2s ease-in-out, opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.btn.mini {
+	width: 47px;
+	margin-left: 53px;
+	
+}
+
+
+.btn:hover {
+	background: rgb(142, 247, 128);
+}
+.btn:active {
+	background-color: #4cee54; 
+
+}
+
+.btn-decrement {
+	position: absolute;
+	transform: translate(-127px, 155px);
+	padding: 0;
 	border: none;
 	background: rgb(0, 123, 255);
 	border-radius: 10px;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
+	width: 0px; /* фиксированная ширина для всех кнопок */
+	height: 40px;
+	margin-right: 0px;
+	z-index: 99;
+	opacity: 0;
+	visibility: visible;
+	transition: width 0.2s ease-in-out, margin-left 1s ease-in-out, opacity 0.2s ease-in-out;
+}
+	
 
-	transition: background .2s linear;
+
+
+
+.btn-decrement.show {
+	opacity: 1;
+	visibility: visible;
+	width: 47px;
+	
+	
+	
+
+	margin-left: px;
 }
 
-.btn:hover {
-	background: lightgreen;
+.btn-decrement:hover {
+	background: lightcoral;
 }
 
+.btn-decrement:active {
+	background-color: rgb(236, 47, 47);
+
+}
+
+.quantity {
+	position: absolute;
+	text-transform: capitalize;
+	width: 30px;
+	height: 30px;
+	background-color: rgb(0, 123, 255);
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	line-height: 30px;
+	transform: translate(-50px, 1px);
+}
 .usercard {
 	text-align: center;
 }
+
