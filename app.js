@@ -23,13 +23,11 @@ function updateCount(productId, decrement = false) {
 
   const addButton = document.getElementById(`btn${productId}`);
   const decrementButton = document.getElementById(`decrement${productId}`);
-  const imgg = document.getElementById(`img${productId}`);
 
   if (count > 0) {
     addButton.textContent = '+';
     addButton.classList.add('mini');
     decrementButton.classList.add('show');
-    imgg.classList.add('rot'); 
   } else {
     addButton.textContent = 'купить';
     addButton.classList.remove('mini');
@@ -54,21 +52,21 @@ function sendOrderToTelegram() {
 
   if (orderData.length > 0) {
     Telegram.WebApp.onEvent("mainButtonClicked", function() {
-      Telegram.WebApp.sendData(orderData);
+      tg.sendData(orderData);
     });
-    Telegram.WebApp.sendData(orderData);
+  
   }
 }
 
 function updateSendButtonState() {
   if (Object.values(productCounts).some(count => count > 0)) {
-    tg.WebApp.MainButton.setParams({
+    tg.MainButton.setParams({
       text: "Отправить заказ",
       show: true,
       type: 'primary'
     });
   } else {
-    tg.WebApp.MainButton.setParams({
+    Telegram.WebApp.MainButton.setParams({
       show: false
     });
   }
@@ -76,5 +74,4 @@ function updateSendButtonState() {
 
 Telegram.WebApp.MainButton.onEvent('click', sendOrderToTelegram); 
 
-// Инициализация состояния кнопки при загрузке страницы
-updateSendButtonState();
+updateSendButtonState(); 
