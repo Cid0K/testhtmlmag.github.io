@@ -5,7 +5,8 @@ tg.expand();
 
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
-tg.MainButton.show();
+tg.MainButton.hide();
+tg.MainButton.setText("Оплатить");
 
 const data = {
   products: []
