@@ -70,14 +70,14 @@ function updateSendButtonState() {
   // Проверяем, есть ли товары в заказе
   if (Object.values(productCounts).some(count => count > 0)) {
     // Включаем главную кнопку Telegram Web App
-    Telegram.WebApp.MainButton.setParams({
+      tg.WebApp.MainButton.setParams({
       text: "Отправить заказ",
       show: true,
       type: 'primary'
     });
   } else {
     // Отключаем главную кнопку Telegram Web App
-    Telegram.WebApp.MainButton.setParams({
+      tg.WebApp.MainButton.setParams({
       show: false
     });
   }
