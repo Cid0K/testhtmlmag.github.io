@@ -29,6 +29,11 @@ function updateData() {
   // Вывод данных в текст
   tt.textContent = JSON.stringify(data, null, 2);
 
+  Telegram.WebApp.onEvent("mainButtonClicked", function(){
+    tg.sendData(data);
+  });
+
+
   if (data.products.length > 0) {
     tg.MainButton.show();
     mb.textContent ='показана'
@@ -77,4 +82,5 @@ function updateCount(productId, decrement = false) {
   // Отправляем данные в Telegram
   Telegram.WebApp.onEvent("mainButtonClicked", function(){
     tg.sendData(data);
+    tg.MainButton.setText("Нажал");
   });
