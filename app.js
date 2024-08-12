@@ -5,6 +5,7 @@ tg.expand();
 
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
+tg.MainButton.show();
 
 function updateCount(productId, decrement = false) {
   const quantityElement = document.getElementById(`quantity${productId}`);
@@ -66,7 +67,7 @@ function updateSendButtonState() {
       type: 'primary'
     });
   } else {
-    Telegram.WebApp.MainButton.setParams({
+    tg.MainButton.setParams({
       show: false
     });
   }
