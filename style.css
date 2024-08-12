@@ -25,6 +25,12 @@ body {
 .img {
 	width: 150px;
 	pointer-events: none;
+	-webkit-touch-callout: none; /* Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	user-select: none; /* Standard *
 	transition: transform 10s ease, margin-top 10s ease-in-out;
 	
 }
