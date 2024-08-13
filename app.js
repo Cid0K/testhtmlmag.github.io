@@ -5,8 +5,7 @@ tg.expand();
 
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
-tg.MainButton.hide();
-tg.MainButton.setText("Оплатить");
+tg.MainButton.show();
 
 const data = {
   products: []
@@ -29,14 +28,12 @@ function updateData() {
   // Вывод данных в текст
   tt.textContent = JSON.stringify(data, null, 2);
 
-  Telegram.WebApp.onEvent("mainButtonClicked", function(){
-    tg.sendData(data);
-  });
-
-
   if (data.products.length > 0) {
     tg.MainButton.show();
     mb.textContent ='показана'
+    Telegram.WebApp.onEvent("mainButtonClicked", function(){
+    tg.sendData(data);
+  });
   } else {
     tg.MainButton.hide();
     mb.textContent ='скрыта'
@@ -76,11 +73,3 @@ function updateCount(productId, decrement = false) {
   updateData();
 }
 
-
-
-
-  // Отправляем данные в Telegram
-  Telegram.WebApp.onEvent("mainButtonClicked", function(){
-    tg.sendData(data);
-    tg.MainButton.setText("Нажал");
-  });
