@@ -30,15 +30,17 @@ function updateData() {
 
   if (data.products.length > 0) {
     tg.MainButton.show();
-    mb.textContent ='показана'
-    Telegram.WebApp.onEvent("mainButtonClicked", function(){
-    tg.sendData(data);
-  });
+    mb.textContent ='показана1'
+  
   } else {
     tg.MainButton.hide();
     mb.textContent ='скрыта'
 }
 }
+
+Telegram.WebApp.onEvent("mainButtonClicked", function(){
+  tg.sendData(data);
+});
 
 function updateCount(productId, decrement = false) {
   const quantityElement = document.getElementById(`quantity${productId}`);
@@ -62,14 +64,11 @@ function updateCount(productId, decrement = false) {
     addButton.textContent = '+';
     addButton.classList.add('mini');
     decrementButton.classList.add('show');
-    tt.textContent = JSON.stringify(data, null, 2);
 
   } else {
     addButton.textContent = 'купить';
     addButton.classList.remove('mini');
     decrementButton.classList.remove('show');
-    tt.textContent =''
   }
   updateData();
 }
-
