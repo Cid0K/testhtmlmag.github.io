@@ -5,7 +5,7 @@ tg.expand();
 
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
-tg.MainButton.show();
+tg.MainButton.hide();
 
 const data = {
   products: []
@@ -30,7 +30,8 @@ function updateData() {
 
   if (data.products.length > 0) {
     tg.MainButton.show();
-    mb.textContent ='показана1'
+    mb.textContent ='показана2'
+    tg.MainButton.setText("Купить");
   
   } else {
     tg.MainButton.hide();
@@ -39,7 +40,7 @@ function updateData() {
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
-  tg.sendData(data);
+  tg.sendData(JSON.stringify(data));
 });
 
 function updateCount(productId, decrement = false) {
