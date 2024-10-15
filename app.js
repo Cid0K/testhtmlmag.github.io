@@ -25,19 +25,6 @@ function updateData() {
       });
     }
   }
-
-  // Вывод данных в текст
-  //tt.textContent = JSON.stringify(data, null, 2);
-
-  //if (data.products.length > 0) {
-  //  tg.MainButton.show();
-  //  mb.textContent ='показана2'
-  //  tg.MainButton.setText("Купить");
-  
-  //} else {
-  //  tg.MainButton.hide();
-  //  mb.textContent ='скрыта'
-//}
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
