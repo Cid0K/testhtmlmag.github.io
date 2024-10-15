@@ -14,6 +14,7 @@ const data = {
 const tt = document.getElementById("data"); 
 
 function updateData() {
+  console.log('updateData() called');
   data.products = []; // Очищаем массив products перед сбором новых данных
 
   for (const productId in productCounts) {
@@ -44,44 +45,46 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 });
 
 function updateCount(productId, decrement = false) {
-  const quantityElement = document.getElementById(`quantity${productId}`); // Correctly using template literals
+  const quantityElement = document.getElementById(`quantity${productId}`);
   const priceSpan = document.getElementById(`price${productId}`); // Use productId, not itemId
-  let count = productCounts[productId] || 0; 
+  let count = productCounts[productId] || 0;
 
-  // Update the count based on decrement
   if (decrement && count > 0) {
     count--;
   } else {
     count++;
   }
 
-  productCounts[productId] = count; // Store the updated count
+  productCounts[productId] = count;
 
-  // Update the quantity display
-  quantityElement.textContent = count; 
-  quantityElement.style.display = count > 0 ? 'inline' : 'none'; 
+  quantityElement.textContent = count;
+  quantityElement.style.display = count > 0 ? 'inline' : 'none';
 
-  // Update button states
-  const addButton = document.getElementById(`btn${productId}`); 
-  const decrementButton = document.getElementById(`decrement${productId}`); 
+  const addButton = document.getElementById(`btn${productId}`);
+  const decrementButton = document.getElementById(`decrement${productId}`);
+  
+    if (count > 0) {
+      addButton.textContent = '+';
+      addButton.classList.add('mini');
+      decrementButton.classList.add('show');
 
-  if (count > 0) {
-    addButton.textContent = '+';
-    addButton.classList.add('mini'); 
-    decrementButton.classList.add('show'); 
-  } else {
-    addButton.textContent = 'Купить'; // Set button text to "Купить"
-    addButton.classList.remove('mini'); 
-    decrementButton.classList.remove('show'); 
-  }
-
-  // Update the price based on count (not quantity)
-  if (count > 1) {
-    priceSpan.textContent = "190р.";
-  } else {
-    priceSpan.textContent = "210р.";
-  }
-
-  // Update data (assuming updateData() is your function for saving changes)
-  updateData(); 
+    } else {
+      addButton.classList.remove('mini');
+      decrementButton.classList.remove('show');
+      setTimeout(() => {
+        addButton.textContent = 'купить';
+    }, 100);
+    }
+  
+    if (count > 1) {
+      if (priceSpan) { // Проверка, существует ли элемент
+       priceSpan.textContent = "190р.";
+      }
+     } else {
+      if (priceSpan) { // Проверка, существует ли элемент
+       priceSpan.textContent = "210р.";
+      }
+     }
+     
+    updateData();
 }
