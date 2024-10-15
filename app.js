@@ -44,32 +44,44 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 });
 
 function updateCount(productId, decrement = false) {
-  const quantityElement = document.getElementById(`quantity${productId}`);
-  let count = productCounts[productId] || 0;
+  const quantityElement = document.getElementById(`quantity${productId}`); // Correctly using template literals
+  const priceSpan = document.getElementById(`price${productId}`); // Use productId, not itemId
+  let count = productCounts[productId] || 0; 
 
+  // Update the count based on decrement
   if (decrement && count > 0) {
     count--;
   } else {
     count++;
   }
 
-  productCounts[productId] = count;
+  productCounts[productId] = count; // Store the updated count
 
-  quantityElement.textContent = count;
-  quantityElement.style.display = count > 0 ? 'inline' : 'none';
+  // Update the quantity display
+  quantityElement.textContent = count; 
+  quantityElement.style.display = count > 0 ? 'inline' : 'none'; 
 
-  const addButton = document.getElementById(`btn${productId}`);
-  const decrementButton = document.getElementById(`decrement${productId}`);
-  
+  // Update button states
+  const addButton = document.getElementById(`btn${productId}`); 
+  const decrementButton = document.getElementById(`decrement${productId}`); 
+
   if (count > 0) {
     addButton.textContent = '+';
-    addButton.classList.add('mini');
-    decrementButton.classList.add('show');
-
+    addButton.classList.add('mini'); 
+    decrementButton.classList.add('show'); 
   } else {
-    addButton.textContent = 'купить';
-    addButton.classList.remove('mini');
-    decrementButton.classList.remove('show');
+    addButton.textContent = 'Купить'; // Set button text to "Купить"
+    addButton.classList.remove('mini'); 
+    decrementButton.classList.remove('show'); 
   }
-  updateData();
+
+  // Update the price based on count (not quantity)
+  if (count > 1) {
+    priceSpan.textContent = "190р.";
+  } else {
+    priceSpan.textContent = "210р.";
+  }
+
+  // Update data (assuming updateData() is your function for saving changes)
+  updateData(); 
 }
