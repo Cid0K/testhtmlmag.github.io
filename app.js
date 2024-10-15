@@ -75,16 +75,17 @@ function updateCount(productId, decrement = false) {
    }, 100);
   }
  
-  if (count > 1) {
-   if (priceSpan) { // Проверка, существует ли элемент
-    priceSpan.textContent = "190р.";
-   }
-  } else {
-   if (priceSpan) { // Проверка, существует ли элемент
-    priceSpan.textContent = "210р.";
-   }
+  if (productId === 1) { // Проверяем, что это товар с id=1
+    if (count > 1) {
+    if (priceSpan) { // Проверка, существует ли элемент
+      priceSpan.textContent = "190р.";
+    }
+    } else {
+    if (priceSpan) { // Проверка, существует ли элемент
+      priceSpan.textContent = "210р.";
+    }
+    }
   }
- 
   updateData();
  }
  
