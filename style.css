@@ -59,7 +59,7 @@ body {
 	height: 40px;
 	transform: translate(-127px, 155px);
 	border: none;
-	border-radius: 10px;
+	border-radius: 4px;
 	background: rgb(0, 123, 255);
 	color: #fff;
 	text-transform: uppercase;
@@ -93,7 +93,7 @@ body {
 	padding: 0;
 	border: none;
 	background: rgb(0, 123, 255);
-	border-radius: 10px;
+	border-radius: 4px;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
