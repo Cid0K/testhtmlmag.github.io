@@ -27,7 +27,7 @@ function updateData() {
   }
 }
 
-tt.textContent = JSON.stringify(data, null, 2);
+  tt.textContent = JSON.stringify(data, null, 2);
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
   tg.sendData(JSON.stringify(data));
