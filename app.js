@@ -45,46 +45,46 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 });
 
 function updateCount(productId, decrement = false) {
-  const quantityElement = document.getElementById(`quantity${productId}`);
-  const priceSpan = document.getElementById(`price${productId}`); // Use productId, not itemId
+  const quantityElement = document.getElementById(`quantity${productId}`); // Используйте обратные кавычки
+  const priceSpan = document.getElementById(`price${productId}`); // Используйте обратные кавычки
   let count = productCounts[productId] || 0;
-
+ 
   if (decrement && count > 0) {
-    count--;
+   count--;
   } else {
-    count++;
+   count++;
   }
-
+ 
   productCounts[productId] = count;
-
+ 
   quantityElement.textContent = count;
   quantityElement.style.display = count > 0 ? 'inline' : 'none';
-
-  const addButton = document.getElementById(`btn${productId}`);
-  const decrementButton = document.getElementById(`decrement${productId}`);
-  
-    if (count > 0) {
-      addButton.textContent = '+';
-      addButton.classList.add('mini');
-      decrementButton.classList.add('show');
-
-    } else {
-      addButton.classList.remove('mini');
-      decrementButton.classList.remove('show');
-      setTimeout(() => {
-        addButton.textContent = 'купить';
-    }, 100);
-    }
-  
-    if (count > 1) {
-      if (priceSpan) { // Проверка, существует ли элемент
-       priceSpan.textContent = "190р.";
-      }
-     } else {
-      if (priceSpan) { // Проверка, существует ли элемент
-       priceSpan.textContent = "210р.";
-      }
-     }
-     
-    updateData();
-}
+ 
+  const addButton = document.getElementById(`btn${productId}`); // Используйте обратные кавычки
+  const decrementButton = document.getElementById(`decrement${productId}`); // Используйте обратные кавычки
+ 
+  if (count > 0) {
+   addButton.textContent = '+';
+   addButton.classList.add('mini');
+   decrementButton.classList.add('show');
+  } else {
+   addButton.classList.remove('mini');
+   decrementButton.classList.remove('show');
+   setTimeout(() => {
+    addButton.textContent = 'купить';
+   }, 100);
+  }
+ 
+  if (count > 1) {
+   if (priceSpan) { // Проверка, существует ли элемент
+    priceSpan.textContent = "190р.";
+   }
+  } else {
+   if (priceSpan) { // Проверка, существует ли элемент
+    priceSpan.textContent = "210р.";
+   }
+  }
+ 
+  updateData();
+ }
+ 

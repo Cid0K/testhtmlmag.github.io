@@ -3,27 +3,27 @@ body {
 	padding: 0;
 	font-size: 18px;
 	color: var(--tg-theme-text-color);
-    	/*background: rgb(161, 193, 240);*/
-    	background: rgb(255, 255, 255);
+	/*background: rgb(161, 193, 240);*/
+	background: rgb(255, 255, 255);
 	-webkit-user-select: none; /* Safari */
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
 	user-select: none; /* Standard */
-}
-
-.container {
+   }
+   
+   .container {
 	max-width: 390px;
 	/*border: 1px solid #7c0000;*/
-}
-
-.inner {
+   }
+   
+   .inner {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 200px 200px 200px;
-	
-}
-
-.img {
+	position: relative; /* Добавьте position: relative к родительскому элементу */
+   }
+   
+   .img {
 	width: 150px;
 	pointer-events: none;
 	-webkit-touch-callout: none; /* Safari */
@@ -31,34 +31,32 @@ body {
 	-khtml-user-select: none; /* Konqueror */
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
-	user-select: none; 
+	user-select: none;
 	transition: transform 10s ease, margin-top 10s ease-in-out;
-	
-}
-
-
-.item {
+   }
+   
+   .item {
 	text-align: center;
-	
-}
-
-.item-name {
-    position: absolute; /* Абсолютное позиционирование для имени товара */
+	height: 200px;
+	position: relative; /* Добавьте position: relative к .item */
+   }
+   
+   .item-name {
+	position: absolute; /* Абсолютное позиционирование для имени товара */
 	transform: translate(21px, -39px);
 	width: 150px;
 	font-size: 15px;
 	display: flex;
-  	justify-content: center;
+	justify-content: center;
 	color: #333333;
 	text-align: center;
-	
-  }
-
-.btn {
+   }
+   
+   
+   .btn {
 	position: absolute;
 	width: 100px;
 	height: 40px;
-	
 	transform: translate(-127px, 155px);
 	border: none;
 	border-radius: 10px;
@@ -74,25 +72,22 @@ body {
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
 	user-select: none;
-	
-}
-
-.btn.mini {
+   }
+   
+   .btn.mini {
 	width: 47px;
 	margin-left: 53px;
-	
-}
-
-
-.btn:hover {
+   }
+   
+   .btn:hover {
 	background: rgb(142, 247, 128);
-}
-.btn:active {
-	background-color: #4cee54; 
-
-}
-
-.btn-decrement {
+   }
+   
+   .btn:active {
+	background-color: #4cee54;
+   }
+   
+   .btn-decrement {
 	position: absolute;
 	transform: translate(-127px, 155px);
 	padding: 0;
@@ -115,33 +110,24 @@ body {
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
 	user-select: none;
-}
-	
-
-
-
-
-.btn-decrement.show {
+   }
+   
+   .btn-decrement.show {
 	opacity: 1;
 	visibility: visible;
 	width: 47px;
-	
-	
-	
-
 	margin-left: px;
-}
-
-.btn-decrement:hover {
+   }
+   
+   .btn-decrement:hover {
 	background: lightcoral;
-}
-
-.btn-decrement:active {
+   }
+   
+   .btn-decrement:active {
 	background-color: rgb(236, 47, 47);
-
-}
-
-.quantity {
+   }
+   
+   .quantity {
 	position: absolute;
 	text-transform: capitalize;
 	width: 30px;
@@ -155,8 +141,9 @@ body {
 	font-size: 14px;
 	line-height: 30px;
 	transform: translate(-50px, 1px);
-}
-.usercard {
+   }
+   
+   .usercard {
 	text-align: center;
-}
-
+   }
+   
