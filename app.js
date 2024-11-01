@@ -82,7 +82,7 @@ function updateCount(productId, decrement = false) {
     }
     } else {
     if (priceSpan) { // Проверка, существует ли элемент
-      priceSpan.textContent = "210р.";
+      priceSpan.textContent = "230р.";
     }
     }
   }
