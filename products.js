@@ -2,7 +2,7 @@
        {
            id: 1,
            name: "Делан 19л. ",
-           price: 210,
+           price: 230,
            imageUrl: "static/images/1.png"
        },
        {
