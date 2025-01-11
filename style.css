@@ -1,47 +1,50 @@
 body {
-	margin: 0;
-	padding: 0;
-	font-size: 18px;
-	color: var(--tg-theme-text-color);
-	/*background: rgb(161, 193, 240);*/
-	background: rgb(255, 255, 255);
-	-webkit-user-select: none; /* Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+ */
-	user-select: none; /* Standard */
-   }
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: var(--tg-theme-text-color);
+    background: rgb(255, 255, 255);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    max-width: 390px;
+    position: relative; /* Делаем контейнер позиционируемым */
+    margin: 0 auto; /* Центрируем контейнер по горизонтали с помощью auto margins */
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px 200px;
+    position: relative; /*  оставляем здесь */
+}
    
-   .container {
-	max-width: 390px;
-	/*border: 1px solid #7c0000;*/
-   }
+.img {
+    width: 150px; /* Зафиксированная ширина */
+    height: 150px; /* Зафиксированная высота */
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: transform 10s ease, margin-top 10s ease-in-out;
+    object-fit: contain; /* Подгоняем изображение под контейнер */
+    background-color: #eee; /* Серый фон как placeholder */
+}
    
-   .inner {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px 200px;
-	position: relative; /* Добавьте position: relative к родительскому элементу */
-   }
-   
-   .img {
-	width: 150px;
-	pointer-events: none;
-	-webkit-touch-callout: none; /* Safari */
-	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+ */
-	user-select: none;
-	transition: transform 10s ease, margin-top 10s ease-in-out;
-   }
-   
-   .item {
+.item {
 	text-align: center;
 	height: 200px;
 	position: relative; /* Добавьте position: relative к .item */
-   }
+}
    
-   .item-name {
+.item-name {
 	position: absolute; /* Абсолютное позиционирование для имени товара */
 	transform: translate(21px, -39px);
 	width: 150px;
@@ -50,10 +53,10 @@ body {
 	justify-content: center;
 	color: #333333;
 	text-align: center;
-   }
+}
    
    
-   .btn {
+.btn {
 	position: absolute;
 	width: 100px;
 	height: 40px;
@@ -72,22 +75,22 @@ body {
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
 	user-select: none;
-   }
+}
    
-   .btn.mini {
+.btn.mini {
 	width: 47px;
 	margin-left: 53px;
-   }
+}
    
-   .btn:hover {
+.btn:hover {
 	background: rgb(142, 247, 128);
-   }
+}
    
-   .btn:active {
+.btn:active {
 	background-color: #4cee54;
-   }
+}
    
-   .btn-decrement {
+.btn-decrement {
 	position: absolute;
 	transform: translate(-127px, 155px);
 	padding: 0;
@@ -110,24 +113,25 @@ body {
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
 	user-select: none;
-   }
+}
    
    .btn-decrement.show {
 	opacity: 1;
 	visibility: visible;
 	width: 47px;
 	margin-left: px;
-   }
+}
    
    .btn-decrement:hover {
 	background: lightcoral;
-   }
+}
    
    .btn-decrement:active {
 	background-color: rgb(236, 47, 47);
-   }
+}
    
-   .quantity {
+.quantity {
+	display: none;
 	position: absolute;
 	text-transform: capitalize;
 	width: 30px;
@@ -135,15 +139,170 @@ body {
 	background-color: rgb(0, 123, 255);
 	color: white;
 	border-radius: 50%;
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 14px;
 	line-height: 30px;
-	transform: translate(-92px, 70px);
-   }
+	transform: translate(-50px, 1px);
+}
    
-   .usercard {
+.usercard {
 	text-align: center;
-   }
+}
    
+
+
+.city-selector {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+     width: max-content; /* или фиксированную ширину в px */
+    max-width: 100%;
+    transform: translateY(10px);
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 300;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/* Для браузеров на основе Webkit (Chrome, Safari, Opera) */
+.city-selector::-webkit-scrollbar {
+    width: 8px;
+}
+
+.city-selector::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.city-selector::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 123, 255);
+    border-radius: 4px;
+    border: none;
+}
+
+.city-selector::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 123, 255, 0.8);
+}
+
+/* Для Firefox */
+.city-selector {
+    scrollbar-color: rgb(0, 123, 255) transparent;
+}
+
+.city-selector.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.city-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 25px;
+}
+
+.city-button {
+    position: relative;
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    background: #f9f9f9;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 700;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.city-button.active {
+    background-color: rgb(0, 123, 255);
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.selected-city-button {
+    position: fixed; /* Абсолютное позиционирование */
+    top: 10px; /* Отступ от верха */
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+    z-index: 2; /* Убедимся, что кнопка поверх других элементов */
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px; /* Отступы внутри кнопки */
+    border-radius: 4px; /* Закругление углов */
+}
+
+.selected-city-button span {
+   margin-right: 5px;
+}
+
+.selected-city-button img {
+   width: 15px;
+   height: 15px;
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.selected-city {
+    font-size: 1em;
+    font-weight: bold;
+}
+.settings-btn {
+   position: fixed;
+   bottom: 20px;
+   right: calc(50% - 195px + 10px) ;
+   width: 40px;
+   height: 40px;
+   border: none;
+   background-color: transparent;
+   font-size: 1em;
+   cursor: pointer;
+   z-index: 250;
+   border-radius: 50%;
+   text-align: center;
+   line-height: 40px;
+   opacity: 0.8;
+   transition: opacity 0.3s ease;
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.settings-btn img {
+    width: 25px;
+    height: 25px;
+    display: block;
+}

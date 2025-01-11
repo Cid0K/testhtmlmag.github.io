@@ -1,21 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Магазин</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Магазин</title>
 </head>
 <body>
-  <div class="container">
-    <div class="inner" id="inner-container"> </div> <!-- Добавили id="inner-container" -->
-  </div>
+<div class="container">
+    <button class="selected-city-button" id="selected-city-button">
+        <span class="selected-city" id="selected-city">Архангельск</span>
+        <img src="static/images/n.png" alt="Выбрать город">
+   </button>
 
-  <script src="https://telegram.org/js/telegram-web-app.js"></script> 
-  <script src="products.js"></script>
-  <script src="addproduct.js"></script>
-  <script src="app.js"></script>
-  
+
+    <div class="city-selector" id="city-selector">
+        <div class="city-buttons">
+            <button class="city-button" data-city="arkhangelsk" data-city-ru="Архангельск">Архангельск</button>
+            <button class="city-button" data-city="bereznick" data-city-ru="Березник">Березник</button>
+            <button class="city-button" data-city="ustug" data-city-ru="Великий Устюг">Великий Устюг</button>
+            <button class="city-button" data-city="velsk" data-city-ru="Вельск">Вельск</button>
+            <button class="city-button" data-city="vologda" data-city-ru="Вологда">Вологда</button>
+            <button class="city-button" data-city="voronezh" data-city-ru="Воронеж">Воронеж</button>
+            <button class="city-button" data-city="vytegra" data-city-ru="Вытегра">Вытегра</button>
+            <button class="city-button" data-city="emetsk" data-city-ru="Емецк">Емецк</button>
+            <button class="city-button" data-city="cargopol" data-city-ru="Каргополь">Каргополь</button>
+            <button class="city-button" data-city="kim" data-city-ru="Кичменгский Городок">Кичменгский Городок</button>
+            <button class="city-button" data-city="konosha" data-city-ru="Коноша">Коноша</button>
+            <button class="city-button" data-city="koryazhma" data-city-ru="Коряжма">Коряжма</button>
+            <button class="city-button" data-city="kotlas" data-city-ru="Котлас">Котлас</button>
+            <button class="city-button" data-city="mirnyi" data-city-ru="Мирный">Мирный</button>
+            <button class="city-button" data-city="moskow1" data-city-ru="Москва">Москва</button>
+            <button class="city-button" data-city="nikolsk" data-city-ru="Никольск">Никольск</button>
+            <button class="city-button" data-city="novodvinsk" data-city-ru="Новодвинск">Новодвинск</button>
+            <button class="city-button" data-city="nyksilitsa" data-city-ru="Нюксеница">Нюксеница</button>
+            <button class="city-button" data-city="nyandoma" data-city-ru="Няндома">Няндома</button>
+            <button class="city-button" data-city="oktyabrskiy" data-city-ru="Октябрьский">Октябрьский</button>
+            <button class="city-button" data-city="pinega" data-city-ru="Пинега">Пинега</button>
+            <button class="city-button" data-city="plesetsk" data-city-ru="Плесецк">Плесецк</button>
+            <button class="city-button" data-city="severodvinsk" data-city-ru="Северодвинск">Северодвинск</button>
+            <button class="city-button" data-city="severoonezhsk" data-city-ru="Североонежск">Североонежск</button>
+            <button class="city-button" data-city="solvychegodsk" data-city-ru="Сольвычегодск">Сольвычегодск</button>
+            <button class="city-button" data-city="tar" data-city-ru="Тарногский Городок">Тарногский Городок</button>
+            <button class="city-button" data-city="totma" data-city-ru="Тотьма">Тотьма</button>
+            <button class="city-button" data-city="harovsk" data-city-ru="Харовск">Харовск</button>
+            <button class="city-button" data-city="holmogory" data-city-ru="Холмогоры">Холмогоры</button>
+            <button class="city-button" data-city="cherepovets" data-city-ru="Череповец">Череповец</button>
+            <button class="city-button" data-city="shenkursk" data-city-ru="Шенкурск">Шенкурск</button>
+            <button class="city-button" data-city="yaroslavl" data-city-ru="Ярославль">Ярославль</button>
+            <button class="city-button" data-city="danilov" data-city-ru="Данилов">Данилов</button>
+            <button class="city-button" data-city="prechistoe" data-city-ru="Пречистое">Пречистое</button>
+        </div>
+    </div>
+    <div class="inner" id="inner-container"></div>
+      <div class="data" id="data"></div>
+</div>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="products.js"></script>
+    <script>
+    // Переносим selectedCity и getPrice сюда и делаем их глобальными
+      let selectedCity = localStorage.getItem('selectedCity') || 'Arkhangelsk';
+    </script>
+<script src="addproduct.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
-

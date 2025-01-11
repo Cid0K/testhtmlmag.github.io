@@ -1,76 +1,115 @@
-   const products = [
-       {
-           id: 1,
-           name: "Делан 19л. ",
-           price: 230,
-           imageUrl: "static/images/1.png"
-       },
-       {
-           id: 2,
-           name: "Делан 6л.x2 ",
-           price: 152,
-           imageUrl: "static/images/2.png"
-       },
-       {
-        id: 3,
-        name: "Делан 10л. ",
-        price: 124,
-        imageUrl: "static/images/3.png"
+const products = {
+    1: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
     },
-    {
-        id: 4,
-        name: "Помпа механ. ",
-        price: 700,
-        imageUrl: "static/images/4.png"
+    2: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
     },
-    {
-        id: 5,
-        name: "Помпа аккум. ",
-        price: 1400,
-        imageUrl: "static/images/5.png"
+    3: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
     },
-    {
-        id: 6,
-        name: "Комбо набор ",
-        price: 1760,
-        imageUrl: "static/images/6.png"
+    4: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
     },
-    {
-        id: 7,
-        name: "Комбо набор ",
-        price: 1760,
-        imageUrl: "static/images/6.png"
+    5: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
     },
-    {
-        id: 8,
-        name: "Комбо набор ",
-        price: 1760,
-        imageUrl: "static/images/6.png"
+    6: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
     },
-    {
-        id: 9,
-        name: "Комбо набор ",
-        price: 1760,
-        imageUrl: "static/images/6.png"
+    5: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
     },
-    {
-        id: 10,
-        name: "Комбо набор ",
-        price: 1760,
-        imageUrl: "static/images/6.png"
+    57: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
     },
-    {
-        id: 11,
-        name: "Комбо набор ",
-        price: 1760,
-        imageUrl: "static/images/6.png"
+    8: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
     },
-    {
-        id: 12,
-        name: "Комбо набор ",
-        price: 1760,
-        imageUrl: "static/images/6.png"
+    9: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
     },
+    10: {
+        name: "Делан 19л. ",
+        imageUrl: "static/images/1.png",
+        prices: {
+            arkhangelsk: 230,
+            novodvinsk: 250,
+            severodvinsk: 270
+        }
+    },
+    
+};
+    
 
-   ];
-   
+function getPrice(productId) {
+    const product = products[productId];
+    if (!product || !product.prices) return null;
+
+     if (product.prices[selectedCity]) {
+        return product.prices[selectedCity]
+    } else if (product.prices['arkhangelsk']){
+       return  product.prices['arkhangelsk']
+    }
+     return null;
+}
