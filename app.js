@@ -14,33 +14,7 @@ const data = {
 const dataDisplay = document.getElementById('data');
 const selectedCityDisplay = document.getElementById('selected-city');
 setSelectedCityDisplay();
-addProducts();
-function setSelectedCityDisplay(){
-    const cityButton = document.querySelector(`.city-button[data-city="${selectedCity}"]`);
-      selectedCityDisplay.textContent = cityButton ? cityButton.dataset.cityRu : 'Архангельск';
-  }
- function getPrice(productId) {
-      const product = products[productId];
-        if (product && product.prices && product.prices[selectedCity]) {
-            return product.prices[selectedCity];
-        }
-        return 0;
-    }
-function calculateTotalPrice() {
-    let totalPrice = 0;
-    for (const productId in productCounts) {
-        const count = productCounts[productId];
-        if (count > 0) {
-           const price = getPrice(productId)
-           if (productId == 1 && count > 1) {
-                totalPrice += (price-40) * count;
-           } else {
-             totalPrice += price * count;
-           }
-        }
-    }
-    return totalPrice;
-}
+
 function setSelectedCityDisplay(){
     const cityButton = document.querySelector(`.city-button[data-city="${selectedCity}"]`);
       selectedCityDisplay.textContent = cityButton ? cityButton.dataset.cityRu : 'Архангельск';
@@ -60,18 +34,15 @@ function updateData() {
         }
     }
      data.city = selectedCity;
-   const totalPrice = calculateTotalPrice();
-    if (data.products.length > 0) {
-       tg.MainButton.show();
-       tg.MainButton.setText(totalPrice > 0 ? `Купить за ${totalPrice} ₽` : "Купить");
 
+    if (data.products.length > 0) {
+        tg.MainButton.show();
+        tg.MainButton.setText("Купить");
     } else {
         tg.MainButton.hide();
     }
-    dataDisplay.textContent = JSON.stringify(data, null, 2);
+   dataDisplay.textContent = JSON.stringify(data, null, 2);
    setSelectedCityDisplay()
-   const debugTotalPriceElement = document.getElementById('debug-total-price');
-   debugTotalPriceElement.textContent = `Общая цена: ${totalPrice} ₽`; // Обновляем текст элемента
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
