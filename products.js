@@ -1,115 +1,289 @@
-const products = {
-    1: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
+const products = [
+    {
+        "id": 1,
+        "name": "Делан 19л.",
+        "imageUrl": "static/images/1.png",
+        "prices": {
+            "arkhangelsk": 230.0,
+            "bereznick": 230.0,
+            "ustug": 230.0,
+            "velsk": 230.0,
+            "vologda": 230.0,
+            "voronezh": 230.0,
+            "vytegra": 230.0,
+            "emetsk": 230.0,
+            "cargopol": 230.0,
+            "kim": 230.0,
+            "konosha": 230.0,
+            "koryazhma": 230.0,
+            "kotlas": 230.0,
+            "mirnyi": 230.0,
+            "moskow1": 230.0,
+            "nikolsk": 230.0,
+            "novodvinsk": 230.0,
+            "nyksilitsa": 230.0,
+            "nyandoma": 230.0,
+            "oktyabrskiy": 230.0,
+            "pinega": 230.0,
+            "plesetsk": 230.0,
+            "severodvinsk": 230.0,
+            "severoonezhsk": 230.0,
+            "solvychegodsk": 230.0,
+            "tar": 230.0,
+            "totma": 230.0,
+            "harovsk": 230.0,
+            "holmogory": 230.0,
+            "cherepovets": 230.0,
+            "shenkursk": 230.0,
+            "yaroslavl": 230.0,
+            "danilov": 230.0,
+            "prechistoe": 230.0
         }
     },
-    2: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
+    {
+        "id": 2,
+        "name": "Делан 6л.X2",
+        "imageUrl": "static/images/2.png",
+        "prices": {
+            "arkhangelsk": 152.0,
+            "bereznick": 152.0,
+            "ustug": 230.0,
+            "velsk": 230.0,
+            "vologda": 230.0,
+            "voronezh": 230.0,
+            "vytegra": 230.0,
+            "emetsk": 230.0,
+            "cargopol": 230.0,
+            "kim": 230.0,
+            "konosha": 230.0,
+            "koryazhma": 230.0,
+            "kotlas": 230.0,
+            "mirnyi": 230.0,
+            "moskow1": 230.0,
+            "nikolsk": 230.0,
+            "novodvinsk": 230.0,
+            "nyksilitsa": 230.0,
+            "nyandoma": 230.0,
+            "oktyabrskiy": 230.0,
+            "pinega": 230.0,
+            "plesetsk": 230.0,
+            "severodvinsk": 230.0,
+            "severoonezhsk": 230.0,
+            "solvychegodsk": 230.0,
+            "tar": 230.0,
+            "totma": 230.0,
+            "harovsk": 230.0,
+            "holmogory": 230.0,
+            "cherepovets": 230.0,
+            "shenkursk": 230.0,
+            "yaroslavl": 230.0,
+            "danilov": 230.0,
+            "prechistoe": 230.0
         }
     },
-    3: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
+    {
+        "id": 3,
+        "name": "Делан 10л.",
+        "imageUrl": "static/images/3.png",
+        "prices": {
+            "arkhangelsk": 124.0,
+            "bereznick": 230.0,
+            "ustug": 230.0,
+            "velsk": 230.0,
+            "vologda": 230.0,
+            "voronezh": 230.0,
+            "vytegra": 230.0,
+            "emetsk": 230.0,
+            "cargopol": 230.0,
+            "kim": 230.0,
+            "konosha": 230.0,
+            "koryazhma": 230.0,
+            "kotlas": 230.0,
+            "mirnyi": 230.0,
+            "moskow1": 230.0,
+            "nikolsk": 230.0,
+            "novodvinsk": 230.0,
+            "nyksilitsa": 230.0,
+            "nyandoma": 230.0,
+            "oktyabrskiy": 230.0,
+            "pinega": 230.0,
+            "plesetsk": 230.0,
+            "severodvinsk": 230.0,
+            "severoonezhsk": 230.0,
+            "solvychegodsk": 230.0,
+            "tar": 230.0,
+            "totma": 230.0,
+            "harovsk": 230.0,
+            "holmogory": 230.0,
+            "cherepovets": 230.0,
+            "shenkursk": 230.0,
+            "yaroslavl": 230.0,
+            "danilov": 230.0,
+            "prechistoe": 230.0
         }
     },
-    4: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
+    {
+        "id": 4,
+        "name": "Помпа механ.",
+        "imageUrl": "static/images/4.png",
+        "prices": {
+            "arkhangelsk": 700.0,
+            "bereznick": 230.0,
+            "ustug": 230.0,
+            "velsk": 230.0,
+            "vologda": 230.0,
+            "voronezh": 230.0,
+            "vytegra": 230.0,
+            "emetsk": 230.0,
+            "cargopol": 230.0,
+            "kim": 230.0,
+            "konosha": 230.0,
+            "koryazhma": 230.0,
+            "kotlas": 230.0,
+            "mirnyi": 230.0,
+            "moskow1": 230.0,
+            "nikolsk": 230.0,
+            "novodvinsk": 230.0,
+            "nyksilitsa": 230.0,
+            "nyandoma": 230.0,
+            "oktyabrskiy": 230.0,
+            "pinega": 230.0,
+            "plesetsk": 230.0,
+            "severodvinsk": 230.0,
+            "severoonezhsk": 230.0,
+            "solvychegodsk": 230.0,
+            "tar": 230.0,
+            "totma": 230.0,
+            "harovsk": 230.0,
+            "holmogory": 230.0,
+            "cherepovets": 230.0,
+            "shenkursk": 230.0,
+            "yaroslavl": 230.0,
+            "danilov": 230.0,
+            "prechistoe": 230.0
         }
     },
-    5: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
+    {
+        "id": 5,
+        "name": "Помпа аккум.",
+        "imageUrl": "static/images/5.png",
+        "prices": {
+            "arkhangelsk": 1400.0,
+            "bereznick": 230.0,
+            "ustug": 230.0,
+            "velsk": 230.0,
+            "vologda": 230.0,
+            "voronezh": 230.0,
+            "vytegra": 230.0,
+            "emetsk": 230.0,
+            "cargopol": 230.0,
+            "kim": 230.0,
+            "konosha": 230.0,
+            "koryazhma": 230.0,
+            "kotlas": 230.0,
+            "mirnyi": 230.0,
+            "moskow1": 230.0,
+            "nikolsk": 230.0,
+            "novodvinsk": 230.0,
+            "nyksilitsa": 230.0,
+            "nyandoma": 230.0,
+            "oktyabrskiy": 230.0,
+            "pinega": 230.0,
+            "plesetsk": 230.0,
+            "severodvinsk": 230.0,
+            "severoonezhsk": 230.0,
+            "solvychegodsk": 230.0,
+            "tar": 230.0,
+            "totma": 230.0,
+            "harovsk": 230.0,
+            "holmogory": 230.0,
+            "cherepovets": 230.0,
+            "shenkursk": 230.0,
+            "yaroslavl": 230.0,
+            "danilov": 230.0,
+            "prechistoe": 230.0
         }
     },
-    6: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
+    {
+        "id": 6,
+        "name": "Комбо набор",
+        "imageUrl": "static/images/6.png",
+        "prices": {
+            "arkhangelsk": 1760.0,
+            "bereznick": 230.0,
+            "ustug": 230.0,
+            "velsk": 230.0,
+            "vologda": 230.0,
+            "voronezh": 230.0,
+            "vytegra": 230.0,
+            "emetsk": 230.0,
+            "cargopol": 230.0,
+            "kim": 230.0,
+            "konosha": 230.0,
+            "koryazhma": 230.0,
+            "kotlas": 230.0,
+            "mirnyi": 230.0,
+            "moskow1": 230.0,
+            "nikolsk": 230.0,
+            "novodvinsk": 230.0,
+            "nyksilitsa": 230.0,
+            "nyandoma": 230.0,
+            "oktyabrskiy": 230.0,
+            "pinega": 230.0,
+            "plesetsk": 230.0,
+            "severodvinsk": 230.0,
+            "severoonezhsk": 230.0,
+            "solvychegodsk": 230.0,
+            "tar": 230.0,
+            "totma": 230.0,
+            "harovsk": 230.0,
+            "holmogory": 230.0,
+            "cherepovets": 230.0,
+            "shenkursk": 230.0,
+            "yaroslavl": 230.0,
+            "danilov": 230.0,
+            "prechistoe": 230.0
         }
     },
-    5: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
+    {
+        "id": 7,
+        "name": "Санация",
+        "imageUrl": "static/images/7.png",
+        "prices": {
+            "arkhangelsk": 1500.0,
+            "bereznick": 230.0,
+            "ustug": 230.0,
+            "velsk": 230.0,
+            "vologda": 230.0,
+            "voronezh": 230.0,
+            "vytegra": 230.0,
+            "emetsk": 230.0,
+            "cargopol": 230.0,
+            "kim": 230.0,
+            "konosha": 230.0,
+            "koryazhma": 230.0,
+            "kotlas": 230.0,
+            "mirnyi": 230.0,
+            "moskow1": 230.0,
+            "nikolsk": 230.0,
+            "novodvinsk": 230.0,
+            "nyksilitsa": 230.0,
+            "nyandoma": 230.0,
+            "oktyabrskiy": 230.0,
+            "pinega": 230.0,
+            "plesetsk": 230.0,
+            "severodvinsk": 230.0,
+            "severoonezhsk": 230.0,
+            "solvychegodsk": 230.0,
+            "tar": 230.0,
+            "totma": 230.0,
+            "harovsk": 230.0,
+            "holmogory": 230.0,
+            "cherepovets": 230.0,
+            "shenkursk": 230.0,
+            "yaroslavl": 230.0,
+            "danilov": 230.0,
+            "prechistoe": 230.0
         }
-    },
-    57: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
-        }
-    },
-    8: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
-        }
-    },
-    9: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
-        }
-    },
-    10: {
-        name: "Делан 19л. ",
-        imageUrl: "static/images/1.png",
-        prices: {
-            arkhangelsk: 230,
-            novodvinsk: 250,
-            severodvinsk: 270
-        }
-    },
-    
-};
-    
-
-function getPrice(productId) {
-    const product = products[productId];
-    if (!product || !product.prices) return null;
-
-     if (product.prices[selectedCity]) {
-        return product.prices[selectedCity]
-    } else if (product.prices['arkhangelsk']){
-       return  product.prices['arkhangelsk']
     }
-     return null;
-}
+];
