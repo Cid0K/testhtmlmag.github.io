@@ -35,7 +35,7 @@ body {
     user-select: none;
     transition: transform 10s ease, margin-top 10s ease-in-out;
     object-fit: contain; /* Подгоняем изображение под контейнер */
-    background-color: #eee; /* Серый фон как placeholder */
+    background-color: #ffffff; /* Серый фон как placeholder */
 }
    
 .item {
@@ -305,4 +305,9 @@ body {
     width: 25px;
     height: 25px;
     display: block;
+}
+
+.empty {
+    padding: 17px; /* Отступы внутри пустых блоков */
+
 }
