@@ -55,9 +55,18 @@
         } else {
             tg.MainButton.hide();
         }
-        dataDisplay.textContent = JSON.stringify(data, null, 2);
-        setSelectedCityDisplay();
+      
+        // Используем requestAnimationFrame для обновления UI
+        requestAnimationFrame(() => {
+            // Добавляем небольшую задержку с помощью setTimeout
+            setTimeout(() => {
+                dataDisplay.textContent = JSON.stringify(data, null, 2);
+                document.getElementById("total").innerHTML = total;
+                setSelectedCityDisplay();
+            }, 50); // Задержка в 50 миллисекунд
+        });
     }
+    
     
     // Обработчик нажатия на основную кнопку Telegram WebApp
     Telegram.WebApp.onEvent("mainButtonClicked", function () {
