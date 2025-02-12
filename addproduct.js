@@ -9,7 +9,7 @@ function getPrice(productId) {
       return 0;
   }
 
-const city = localStorage.getItem('selectedCity') || 'city1'; //Получаем город из localStorage или ставим город по умолчанию
+const city = localStorage.getItem('selectedCity') || 'arkhangelsk'; //Получаем город из localStorage или ставим город по умолчанию
 
  if (product.prices && product.prices[city]) {
     return product.prices[city];
